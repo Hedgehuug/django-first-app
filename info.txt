@@ -7,3 +7,40 @@ To initiate Python projects:
 Running development server:
     - cd into mysite
     - run command: python manage.py runserver
+
+To Create an app:
+    - python manage.py startapp polls
+
+
+Creating views:
+    - go into app-directory/views and enter code:
+        from django.http import HttpResponse
+        def index(request):
+            return HttpResponse("Hello, world. You're at the polls index.")
+
+
+    - in app folder create urls.py file:
+        from django.urls import path
+        from . import views
+        urlpatterns = [
+            path('', views.index, name='index'),
+        ]
+
+
+# Database bindings are interpreters for data tables
+Recommended Database Bindings:
+    - Postgre SQL
+
+# if you are not using SQLite as your database, additional settings such as USER, PASSWORD, and HOST must be added. 
+# For more details, see the reference documentation for DATABASES.
+
+
+push migrations for apps:
+    - python manage.py makemigrations appName
+    # e.g. python manage.py makemigrations polls
+
+
+MAKE CHANGES TO DATABASES
+- Change your models (in models.py).
+- Run python manage.py makemigrations to create migrations for those changes
+- Run python manage.py migrate to apply those changes to the database.
