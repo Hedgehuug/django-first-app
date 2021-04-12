@@ -1,0 +1,9 @@
+Some notes for Django:
+
+To initiate Python projects:
+    -$ django-admin startproject mysite
+
+
+Running development server:
+    - cd into mysite
+    - run command: python manage.py runserver
